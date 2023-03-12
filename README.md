@@ -62,12 +62,12 @@ The MLP (Multilayer Perceptron Class) is broken up into a constructor and 7 sepa
 - **gradient_descent** - Learns (updates weights) by descending the error gradient
     - *Parameters:*
         - *learningRate (float)* - The rate (or step) at which the model will learn
-- **_sigmoid** - Sigmoid activation function $$ \sigma(x) = \frac{1}{1 + e^{-x}} $$
+- **_sigmoid** - Sigmoid activation function $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
     - *Parameters:*
         - *x (float)* - Value to be processed through sigmoid function
     - *Returns:*
         - *y (float)* - Calculated sigmoid function result
-- **_sigmoid_derivative** - Sigmoid derivative function $$ \sigma'(x) = \sigma(x)*(1 - \sigma(x)) $$
+- **_sigmoid_derivative** - Sigmoid derivative function $$\sigma'(x) = \sigma(x)*(1 - \sigma(x))$$
     - *Arguments:*
         - *x (float)* - Value to be processed through sigmoid derivative
     - *Returns:*
