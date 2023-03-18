@@ -8,6 +8,8 @@
 
 This code implements a basic multi-layer perceptron (MLP) neural network from scratch. The purpose of this is to illustrate the inner workings of a neural network by building one from the ground up and then demonstrate how easily it can be replicated when utilizing TensorFlow.
 
+Read my blog post about MLPs [here.](https://medium.com/@crlandschoot/how-do-neural-networks-really-work-ac137e0b052)
+
 **NOTE: This code is a modified version of code from [Valerio Velardo's (The Sound of AI)](https://www.youtube.com/@ValerioVelardoTheSoundofAI) [source code](https://github.com/musikalkemist/DeepLearningForAudioWithPython). Please see license for copyright information.**
 
 ## Motivation
