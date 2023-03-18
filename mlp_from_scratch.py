@@ -1,8 +1,9 @@
+# Imports
 import numpy as np
 from random import random
 
 """This is sample code to demonstrate the inner-workings of a neural network.
-Below we build a Multilayer Perceptron (MLP) Feedforward Neural Network.
+Below we build a Multilayer Perceptron (MLP) Dense (aka Feedforward) Neural Network.
 
 We then test the neural net with two input numbers when added together equal the output number.
 This trains the model to learn that adding these two numbers together will equal the output number.
@@ -42,14 +43,14 @@ class MLP:
         # Derivatives
         derivatives = []
         for i in range(len(layers) - 1):  # same number as weight matrices (in between layers)
-            d = np.zeros((layers[i], layers[i+1]))  # create empty matrix of derivatives between neurons
+            d = np.zeros((layers[i], layers[i+1]))  # create empty matrix of derivatives between nodes (aka neurons)
             derivatives.append(d)
         self.derivatives = derivatives
 
         # Activations
         activations = []
         for i in range(len(layers)):
-            a = np.zeros(layers[i])  # create empty array of activations for neurons
+            a = np.zeros(layers[i])  # create empty array of activations for nodes
             activations.append(a)
         self.activations = activations
 
@@ -193,9 +194,9 @@ if __name__ == "__main__":
     targets = np.array([[i[0] + i[1]] for i in items])
 
     # Create a Multilayer Perceptron with one hidden layer
-    #   input layer: 2 neurons
-    #   hidden layer: 5 neurons (can add to list create arbitrary number of hidden layers
-    #   output layer: 1 neuron
+    #   input layer: 2 nodes
+    #   hidden layer: 5 nodes (can add to list create arbitrary number of hidden layers
+    #   output layer: 1 nodes
     mlp = MLP(2, [5], 1)
 
     # Train network

@@ -13,9 +13,11 @@ This code implements a basic multi-layer perceptron (MLP) neural network from sc
 ## Motivation
 When working with machine learning (ML) models, we use pre-built libraries with immense functionality all of the time. While it is efficient to utilize what has already been constructed (why reinvent the wheel?), this never truly imparts an understanding of the math that lives under the hood. Without an understanding of the components of a system, you can never utilize it to its full potential. The motivation for replicating this code was to provide a deeper understanding for myself and others of a simple neural net so that each element is more tangible.
 
+**Note** that while a simple dense network as described below would not be used for audio machine learning tasks (which is my primary interest), the principles demonstrated here undergird the processes of more complex CNNs, RNNs, etc.
+
 ## MLP Neural Network Background
 
-An MLP is a type of artificial neural network that consists of multiple layers of interconnected nodes, also known as neurons. It is a feedforward neural network, which means that the input data flows through the network in one direction, and the output is generated at the end of the network.
+An MLP is a type of artificial neural network that consists of multiple layers of interconnected nodes, also known as neurons. It is a feedforward neural network (aka "dense" network), which means that the input data flows through the network in one direction, and the output is generated at the end of the network.
 
 <div align="center">
 <img src="./images/MLP.jpg" width=500/>
@@ -35,7 +37,7 @@ The architecture of an MLP includes an input layer, hidden layers, an output lay
 
 - **Weights and Biases:** Each neuron in the MLP is associated with a set of weights and biases, which are learned during the training process. The weights determine the strength of the connections between the neurons, while the biases control the threshold at which the neuron activates. The learning algorithm, gradient descent in our model, adjusts the weights and biases to minimize the error between the predicted output and the actual output, which allows the MLP to learn to make accurate predictions on new data. Our model implements a backpropagation optimization algorithm to calculate errors to influence the gradient descent. A common error metric, such as mean squared error (MSE), can be used to measure the performance of the model.
 
-MLPs are used in a variety of applications, including image and speech recognition, natural language processing (NLP), and predictive modeling. They are known for their ability to handle complex nonlinear relationships in data and can be used for both regression and classification tasks. However, they can be computationally expensive to train and require large amounts of data to achieve good performance.
+The principles demonstrated in these MLPs are used in a variety of applications, including image and speech recognition, natural language processing (NLP), and predictive modeling. They are known for their ability to handle complex nonlinear relationships in data and can be used for both regression and classification tasks. However, they can be computationally expensive to train and require large amounts of data to achieve good performance.
 
 ## Structure
 The MLP (Multilayer Perceptron Class) is broken up into a constructor and 7 separate methods:
@@ -81,10 +83,10 @@ The MLP (Multilayer Perceptron Class) is broken up into a constructor and 7 sepa
 
 
 ## More Information 
-If you like what is here and are interested in audio machine learning, follow Valerio on his incredible YouTube channel at [The Sound of AI](https://www.youtube.com/@ValerioVelardoTheSoundofAI).
+If you like what is here and are interested in audio machine learning, follow Valerio on his YouTube channel at [The Sound of AI](https://www.youtube.com/@ValerioVelardoTheSoundofAI). I love his channel!
 
 I am an audio researcher and scientist with a passion for music, spatial audio, and machine learning. You can see more of my work on [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F6PaFcTdi4cTxZ3Kpvf2xwKM4ramDbqVKFm_buMLElpYMNzxViHQuKgOPeLMMP3KkcK6besvk4Tu9wURTx-4smBAfXZtw&user=4K5CzM4AAAAJ) and my [GitHub page](https://github.com/crlandsc).
 
-Current Research: [Binaural Externalization Processing](https://www.chrislandschoot.com/binaural-externalization)
+Check out my current research: [Binaural Externalization Processing (demo)](https://www.chrislandschoot.com/binaural-externalization)
 
 I also make music under the name [After August](https://www.after-august.com/). Check me out on [Spotify](https://open.spotify.com/artist/2i6noWJnJQPXPsudoiJuMS?si=AOMNQvWgQESKoKooa9qeAw) and [YouTube](https://youtube.com/@AfterAugust)!

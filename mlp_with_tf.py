@@ -1,10 +1,14 @@
+# Imports
 import numpy as np
 from random import random
-import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.optimizers import SGD
+# import tensorflow as tf
 from sklearn.model_selection import train_test_split
 
 """This is sample code to demonstrate how to construct a basic neural network with TensorFlow.
-Below we build a Multilayer Perceptron (MLP) Feedforward Neural Network.
+Below we build a Multilayer Perceptron (MLP) Dense (aka Feedforward) Neural Network.
 
 We then test the neural net with two input numbers when added together equal the output number.
 This trains the model to learn that adding these two numbers together will equal the output number.
@@ -33,32 +37,31 @@ def generate_dataset(num_samples, test_size):
     y = np.array([[i[0] + i[1]] for i in X])
 
     # Train-test split
-    X_train, X_test, y_train, y_test = train_test_split(X,
-                                                        y,
-                                                        test_size=test_size)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size)
 
     return X_train, X_test, y_train, y_test
 
 
 if __name__ == "__main__":
+    # Create a dataset of 5000 samples with a train/test split of 70%/30%
     X_train, X_test, y_train, y_test = generate_dataset(5000, 0.3)
 
-    # Instantiate model with tf:
-    #   input layer: 2 neurons
-    #   hidden layer: 5 neurons
-    #   output layer: 1 neuron
-    # Note: dense layer connects all neurons with previous layer
-    model = tf.keras.Sequential([
-        tf.keras.layers.Dense(5, input_dim=2, activation="sigmoid"),  # Hidden layer (with 2 inputs)
-        tf.keras.layers.Dense(1, activation="sigmoid")  # Output layer
+    # Instantiate sequential model with tensorflow:
+    #   input layer: 2 nodes
+    #   hidden layer: 5 nodes
+    #   output layer: 1 nodes
+    # Note: dense layer connects all nodes (aka neurons) with previous layer
+    model = Sequential([
+        Dense(5, input_dim=2, activation="relu"),  # Hidden layer (activation = relu, performs better than sigmoid)
+        Dense(1, activation="linear")  # Output layer (activation = identity for regression problem)
     ])
 
     # Compile model
-    optimizer = tf.keras.optimizers.SGD(learning_rate=0.1)  # SDG = Stochastic gradient descent
+    optimizer = SGD(learning_rate=0.1)  # SDG = Stochastic gradient descent
     model.compile(optimizer=optimizer, loss='mse')  # MSE = Mean-squared-error
 
     # Train model
-    model.fit(X_train, y_train, epochs=100)
+    model.fit(X_train, y_train, batch_size=32, epochs=100)
 
     # Evaluate model
     print("\nModel Evaluation:")
