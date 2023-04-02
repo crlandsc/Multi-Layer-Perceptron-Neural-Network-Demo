@@ -83,7 +83,6 @@ The MLP (Multilayer Perceptron Class) is broken up into a constructor and 7 sepa
     - *Returns:*
         - *(float)* - Calculated mean squared error
 
-
 ## More Information 
 If you like what is here and are interested in audio machine learning, follow Valerio on his YouTube channel at [The Sound of AI](https://www.youtube.com/@ValerioVelardoTheSoundofAI). I love his channel!
 
